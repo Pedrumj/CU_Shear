@@ -11,15 +11,17 @@ In order for this program to run CSI SAP 2000 V16 must be installed on the syste
 <br>2-	Changing the code from early binding to late binding. 
 
 #How to:
-<br><b>Step 1</b>: You will need to create a new SapStructure object. There are several inputs to the constructor:
+<b>Step 1</b>: You will need to create a new SapStructure object. There are several inputs to the constructor:
 <br>__strPath: The path to one of the SAP model files.
 <br>__X: The X coordinate of a point on the cast unit
 <br>__Y: The Y coordinate of a point on the cast unit.
 <br>__Z: The Z coordinate of a point on the cast unit. 
 <br>__type: The type of cast unit, beam or column. Columns are assumed to be in the Z direction and beams are assumed to be in either the X or Y direction. Note for columns the __Z parameter is irrelevant. For beams depending on the direction the __X or __Y parameters will be irrelevant. 
 <br>__dir: X or Y. This is only relevant for beams. 
+
 <br><b>Step 2:</b>
 For each model call the <code>GetResults_LoadCases</code> function. This will fetch the forces from the sap analysis. 
+
 <br><b>Step 3:</b>
 when finished working with the program release resources by calling <code>CloseApplication</code>
 
