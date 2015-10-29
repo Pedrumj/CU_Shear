@@ -2,8 +2,10 @@
 Gets the shear in a cast unit, from multiple CSI SAP models using the SAP OAPI in VB.NET.
 
 There were 2 reasons for writing this program:
+
 1.	When designing structures, the engineer normally prefers to view the cast unit as a whole rather than as separate elements. CSI SAP does not give the engineers this option. This program will retrieve data associated with an entire cast unit. Later these values can be exported to a spreadsheet and viewed there. 
 2.	Often a design will require forces from multiple files. This is specially the case when there are seismic loads involved. Some specification may require designing without shear walls under reduced seismic loads in addition to the normal analysis. This program gives the user the option to fetch results from multiple SAP models
+
 #Requirements
 In order for this program to run CSI SAP 2000 V16 must be installed on the system. The program should work for other SAP versions, by either:
 <br>1-	Replacing all instances of <code>SAP2000v16 </code> with the appropriate namespace.
