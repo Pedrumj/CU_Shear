@@ -2,8 +2,8 @@
 Gets the shear in a cast unit, from multiple CSI SAP models using the SAP OAPI in VB.NET.
 
 There were 2 reasons for writing this program:
-<br>1-	When designing structures, the engineer normally prefers to view the cast unit as a whole rather than as separate elements. CSI SAP does not give the engineers this option. This program will retrieve data associated with an entire cast unit. Later these values can be exported to a spreadsheet and viewed there. 
-<br>2-	Often a design will require forces from multiple files. This is specially the case when there are seismic loads involved. Some specification may require designing without shear walls under reduced seismic loads in addition to the normal analysis. This program gives the user the option to fetch results from multiple SAP models
+1.	When designing structures, the engineer normally prefers to view the cast unit as a whole rather than as separate elements. CSI SAP does not give the engineers this option. This program will retrieve data associated with an entire cast unit. Later these values can be exported to a spreadsheet and viewed there. 
+2.	Often a design will require forces from multiple files. This is specially the case when there are seismic loads involved. Some specification may require designing without shear walls under reduced seismic loads in addition to the normal analysis. This program gives the user the option to fetch results from multiple SAP models
 #Requirements
 In order for this program to run CSI SAP 2000 V16 must be installed on the system. The program should work for other SAP versions, by either:
 <br>1-	Replacing all instances of <code>SAP2000v16 </code> with the appropriate namespace.
@@ -12,12 +12,12 @@ In order for this program to run CSI SAP 2000 V16 must be installed on the syste
 
 #How to:
 <b>Step 1</b>: You will need to create a new SapStructure object. There are several inputs to the constructor:
-<br>__strPath: The path to one of the SAP model files.
-<br>__X: The X coordinate of a point on the cast unit
-<br>__Y: The Y coordinate of a point on the cast unit.
-<br>__Z: The Z coordinate of a point on the cast unit. 
-<br>__type: The type of cast unit, beam or column. Columns are assumed to be in the Z direction and beams are assumed to be in either the X or Y direction. Note for columns the __Z parameter is irrelevant. For beams depending on the direction the __X or __Y parameters will be irrelevant. 
-<br>__dir: X or Y. This is only relevant for beams. 
+- __strPath: The path to one of the SAP model files.
+- __X: The X coordinate of a point on the cast unit
+- __Y: The Y coordinate of a point on the cast unit.
+- __Z: The Z coordinate of a point on the cast unit. 
+- __type: The type of cast unit, beam or column. Columns are assumed to be in the Z direction and beams are assumed to be in either the X or Y direction. Note for columns the __Z parameter is irrelevant. For beams depending on the direction the __X or __Y parameters will be irrelevant. 
+- __dir: X or Y. This is only relevant for beams. 
 
 <br><b>Step 2:</b>
 For each model call the <code>GetResults_LoadCases</code> function. This will fetch the forces from the sap analysis. 
